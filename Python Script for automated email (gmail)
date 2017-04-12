@@ -4,6 +4,6 @@ server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
 server.login(" Sender gmail address ", " Password ")
  
-msg = "Hi Tor, I love you!"
+msg = "Hi, How are you!"
 server.sendmail(" Sender gmail address ", " Recipient Email address ", msg)
 server.quit()
