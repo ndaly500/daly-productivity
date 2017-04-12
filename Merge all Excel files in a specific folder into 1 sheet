@@ -1,0 +1,21 @@
+import pandas as pd
+import openpyxl
+import xlsxwriter
+import xlwings as xw
+from lxml import html
+import numpy as np
+import glob
+from pyexcel.cookbook import merge_two_files
+!ls /Users/nialdaly/Documents/yourfolder
+glob.glob("/Users/nialdaly/Documents/yourfolder/*.xls")
+
+
+all_data = pd.DataFrame()
+for f in glob.glob("/Users/nialdaly/Documents/yourfolder/*.xls"):
+    df = pd.read_excel(f,skiprows=0)
+    all_data = all_data.append(df, ignore_index=True)
+    
+all_data.head(57000000000)
+
+all_data.to_excel('/Users/nialdaly/Documents/newfolder/newfile.xlsx', index=False)
+print('Spreadsheet saved.')
